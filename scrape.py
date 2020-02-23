@@ -74,7 +74,11 @@ def getPropertyValues( pin ):
 	try:
 		myvar = tree.xpath( '//body/div/table/tr/td/table/tr/td[1]/table/tr[6]/td/table/tr[11]/td[2]/text()' )
 		squareFootage = myvar[1].strip()
-		#print( squareFootage )
+		# just want the square footage value
+		sqFt_raw = squareFootage.split()
+		squareFootage = sqFt_raw[0]
+		#print( squareFootage ):w
+
 	except IndexError:
 		squareFootage = ''
 	propertyInfo.append( str(squareFootage) )
